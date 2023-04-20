@@ -1,9 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const { urlencoded, json } = require("body-parser");
 const User = require("./enrollDB");
 const verify = require("./email-validation");
 const uniqid = require("uniqid");
+const port = process.env.PORT || 3001;
 
 
 const app = express();
@@ -12,8 +14,9 @@ app.use(urlencoded({extended:true}));
 app.use(express.static("public"));
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/enrollDB").then(()=> {
-    app.listen(3000, () => console.log("Server successfully running on port 3000"));
+
+mongoose.connect("mongodb+srv://"+process.env.mongoUsername+":<"+process.env.mongoPassword+">@cluster0.1riedus.mongodb.net/?retryWrites=true&w=majority/enrollDB").then(()=> {
+    app.listen(port, () => console.log("Server successfully running on port " +port ));
 }).catch((err) => {
     console.log("Check Database connection" + err);
 });
