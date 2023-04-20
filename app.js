@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 
 
-mongoose.connect("mongodb+srv://"+process.env.mongoUsername+":<"+process.env.mongoPassword+">@cluster0.1riedus.mongodb.net/?retryWrites=true&w=majority/enrollDB").then(()=> {
+mongoose.connect("mongodb+srv://"+process.env.mongoUsername+":"+process.env.mongoPassword+"@cluster0.1riedus.mongodb.net/?retryWrites=true&w=majority/enrollDB").then(()=> {
     app.listen(port, () => console.log("Server successfully running on port " +port ));
 }).catch((err) => {
     console.log("Check Database connection" + err);
