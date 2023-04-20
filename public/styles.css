@@ -1,0 +1,30 @@
+body {
+    background-color: grey;
+    text-align: center;
+}
+
+form {
+    margin: 100px auto;
+    box-shadow: inset;
+    text-align: left;
+    width: 700px;
+}
+
+form input {
+  margin-bottom: 10px;
+}
+
+
+form p {
+    word-wrap: break-word;
+}
+
+.form-body {
+    padding: 40px;
+    background-color: whitesmoke;
+}
+
+
+form select {
+    margin-bottom: 10px;
+}

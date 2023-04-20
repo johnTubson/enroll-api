@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form action="" method="post">
+        <div class="form-body">
+            <label for="fName">First Name*</label>
+            <br>
+            <input type="text" name="fName" placeholder="first name" required>
+            <br>
+            <label for="lName">Last Name*</label>
+            <br>
+            <input type="text" name="lName" placeholder="last name" required>
+            <br>
+            <label for="Email">Email*</label>
+            <br>
+            <input type="text" name="email" placeholder="email" required>
+            <br>
+            <label for="Phone">Phone*</label>
+            <br>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <br>
+            <label for="age">Application Age*</label>
+            <br>
+            <select id="age" name="age" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="0-17">17 and Under</option>
+                <option value="18-23">18-23</option>
+                <option value="24-29">24-29</option>
+                <option value="30-34">30-34</option>
+                <option value="35-200">35 and Older</option>
+            </select>
+            <br>
+            <label for="gender">Gender*</label>
+            <br>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="not-given">Prefer not to state</option>
+            </select>
+            <br>
+            <label for="country">Country of Origin*</label>
+            <br>
+            <input type="text" name="country" placeholder="Country of origin">
+            <br>
+            <label for="choiceOne">Programme Choice 1*</label>
+            <br>
+            <select id="choiceOne" name="choiceOne" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="AWS Cloud Practitioner">AWS Cloud Practitioner</option>
+                <option value="Salesforce administrator">Salesforce administrator</option>
+                <option value="Data analysis">Data analysis</option>
+                <option value="Data science">Data science</option>
+            </select>
+            <br>
+            <label for="choiceTwo">Programme Choice 2*</label>
+            <br>
+            <select id="choiceTwo" name="choiceTwo" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="AWS Cloud Practitioner">AWS Cloud Practitioner</option>
+                <option value="Salesforce administrator">Salesforce administrator</option>
+                <option value="Data analysis">Data analysis</option>
+                <option value="Data science">Data science</option>
+            </select>
+            <br>
+            <label for="preferredCity">Preferred City Hub*</label>
+            <br>
+            <select id="preferredCity" name="preferredCity" required>
+                <option value="" disabled selected>In person attendance is required. Please select a hub</option>
+                <option value="Accra">Accra</option>
+                <option value="Addis Ababa">Addis Ababa</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Casablanca">Casablanca</option>
+                <option value="Johannesburg">Johannesburg</option>
+                <option value="Kigali">Kigali</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Immobile">Not able to commute to a city hub</option>
+            </select>
+            <br>
+            <label for="fullSponsorship">Do you require full sponsorship to take part in the programme?*</label>
+            <br>
+            <select id="fullSponsorship" name="fullSponsorship" required>
+                <option value="" disabled selected>Please select</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <br>
+            <p><input type="checkbox" name="marketingConsent" id="marketingConsent">I understand that I may receive
+                marketing information from The African Leadership Group and hereby consent to ALG sending me
+                communications relating to ALG’s product, services and activities, I am aware that it is entirely
+                optional to receive these communications and I can opt out at any time.</p>
+            <br>
+            <button type="submit" value="submit">Submit</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
