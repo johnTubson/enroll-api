@@ -12,7 +12,7 @@ async function enrollUser(req, res) {
   try {
     const newUser = await saveUser.save();
 	// notifyAdmin(newUser);
-	return res.status(200).json(newUser);
+	return await res.status(200).json(newUser);
     
   } catch (err) {
     return res.status(400).json({ error: err });
@@ -25,7 +25,7 @@ async function enrollUser(req, res) {
 const allEnrolledUsers = async (req, res) => {
 	try {
 		const foundUsers = await User.find();
-	    return res.status(200).json(foundUsers);
+	    return await res.status(200).json(foundUsers);
 	} catch {
 		return res.status(400).json({error: "Error retrieving users"});
 	}
@@ -36,7 +36,7 @@ const allEnrolledUsers = async (req, res) => {
 async function deleteAllEnrolledUsers(req, res) {
 	try {
 		const deleteMsg = await User.deleteMany();
-        return res.status(200).json(deleteMsg);
+        return await res.status(200).json(deleteMsg);
 	} catch {
 		return res.status(400).json({error: "Error deleting users"})
 	}
@@ -49,10 +49,10 @@ async function getUser(req, res) {
 	try {
 		const user = await User.findOne({_id: req.params.id});
 	    if(user) {
-	       return res.status(200).json(user);
+	       return await res.status(200).json(user);
 	    }
 	    else {
-	        return res.status(400).json({error: "User doesn't exist"});
+	        return await res.status(400).json({error: "User doesn't exist"});
 	    }
     } catch {
 	return res.status(400).json({error: "err retrieving user"});
@@ -66,7 +66,7 @@ async function updateUserDetails(req, res) {
 	try {
 		const updateDetails = req.body
 		const confirmedDetails = await User.findOneAndUpdate({_id: req.params.id}, updateDetails, {new: true});
-		return res.status(200).json(confirmedDetails)
+		return await res.status(200).json(confirmedDetails)
 	} catch (error) {
 		return res.status(400).json({error: "Error updating user details"})
 	}
@@ -77,7 +77,7 @@ async function updateUserDetails(req, res) {
 async function deleteUser(req, res) {
 	try {
 	await User.deleteOne({_id:req.params.id});
-	return res.status(200).json("User successfully deleted");
+	return await res.status(200).json("User successfully deleted");
 } catch (error) {
 	return res.status(400).json("Error deleting user");
 }
