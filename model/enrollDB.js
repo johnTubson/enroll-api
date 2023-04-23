@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    fName: {
+    first_name: {
         type: String,
         required: true,
     },
-    lName: {
+    last_name: {
         type: String,
         required: true,
     },
@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+
     phone: {
         type: String,
         required: true,
@@ -29,28 +30,26 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    choiceOne: {
+    preferred_choice_one: {
         type: String,
         required: true,
     },
-    choiceTwo: {
+    preferred_choice_two: {
         type: String,
         required: true,
     },
-    preferredCity: {
+    preferred_city: {
         type: String,
         required: true,
     },
-    fullSponsorship: {
+    full_sponsorship: {
         type: String,
         required: true,
     },
-    marketingConsent: {
+    marketing_consent: {
         type: String,
         required: true,
     },
-    token: String,
-    active: Boolean,  
 });
 
 const User = mongoose.model("user", userSchema);
