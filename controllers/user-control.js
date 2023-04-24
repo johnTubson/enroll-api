@@ -14,7 +14,7 @@ async function enrollUser(req, res) {
 	// notifyAdmin(newUser);
 	return await res.status(200).json(newUser);
     
-  } catch (err) {
+  } catch (error) {
     return res.status(400).json({ error: err });
   }
 }
@@ -26,7 +26,7 @@ const allEnrolledUsers = async (req, res) => {
 	try {
 		const foundUsers = await User.find();
 	    return await res.status(200).json(foundUsers);
-	} catch {
+	} catch (error) {
 		return res.status(400).json({error: "Error retrieving users"});
 	}
 	
@@ -37,7 +37,7 @@ async function deleteAllEnrolledUsers(req, res) {
 	try {
 		const deleteMsg = await User.deleteMany();
         return await res.status(200).json(deleteMsg);
-	} catch {
+	} catch (error) {
 		return res.status(400).json({error: "Error deleting users"})
 	}
 }
@@ -54,7 +54,7 @@ async function getUser(req, res) {
 	    else {
 	        return await res.status(400).json({error: "User doesn't exist"});
 	    }
-    } catch {
+    } catch (error) {
 	return res.status(400).json({error: "err retrieving user"});
 	}
 	
