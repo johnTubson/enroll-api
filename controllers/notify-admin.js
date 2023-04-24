@@ -17,22 +17,30 @@ async function sendMail(userDetails) {
   // send mail with defined transport object
 
   let mailOptions = {
-    from: '"Site Control" <users@enroll-api.johntubsondev>', // sender address
+    from: process.env.ADMIN_EMAIL, // sender address
     to: process.env.ADMIN_EMAIL, // list of receivers
     subject: "New enrolled user", // Subject line
     text:
-      "Hello Admin, there's a new enrolled user with the following details: \n " +
-      userDetails, // plain text body
+      "Hello Admin, there's a new enrolled user with the following details: \n " + userDetails, // plain text body
     html:
-      "<b>Hello Admin</b>, there's a new enrolled user with the following details: \n " +
-      userDetails, // html body
+      "<b>Hello Admin</b>, there's a new enrolled user with the following details: \n " + userDetails, // html body
   };
 
-  transporter.sendMail(mailOptions, (err, data) => {
+  // verify connection configuration
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("Cant't connect to smtp server!")
+  } else {
+    transporter.sendMail(mailOptions, (err, data) => {
     if(err) {
       // do nothing, non-breaking change
+      console.log("Cant't send mail")
     }
   })
+  }
+});
+
+  
 }
 
 module.exports = sendMail;
