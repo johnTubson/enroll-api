@@ -11,7 +11,8 @@ async function enrollUser(req, res) {
 
   try {
     const newUser = await saveUser.save();
-	// notifyAdmin(newUser);
+	// Success or Failure notifying admin shouldn't hinder the registration process
+	notifyAdmin(newUser);
 	return await res.status(200).json(newUser);
     
   } catch (error) {
